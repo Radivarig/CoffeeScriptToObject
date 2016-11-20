@@ -3,6 +3,10 @@
 Takes a string of coffee-script code and compiles it into an object containing fields starting with `@` symbol.  
 For example, string `@a = 5` returns `{a: 5}`.
 
+## Install
+
+npm i --save coffeescript-to-object
+
 ## TODO
 
 - handle functions
@@ -14,12 +18,12 @@ For example, string `@a = 5` returns `{a: 5}`.
 var React = require('react')
 var ReactDOM = require('react-dom')
 
-var CoffeeScriptToObject = require('./CoffeeScriptToObject.jsx')
+var CoffeeScriptToObject = require('coffeescript-to-object')
 
 var App = React.createClass({
   getInitialState() {
     return {
-      codeText: '',
+      codeText: '@a = 5',
       coffeeObject: {},
       errorMessage: '',
     }
