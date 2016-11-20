@@ -6,7 +6,7 @@ var CoffeeScriptToObject = require('./CoffeeScriptToObject.jsx')
 var App = React.createClass({
   getInitialState() {
     return {
-      codeText: '',
+      codeText: 'n = 3\n@a = n + 4',
       coffeeObject: {},
       errorMessage: '',
     }
@@ -16,7 +16,7 @@ var App = React.createClass({
   render () {
     return (
       <div>
-        <input
+        <textarea rows={10} cols={40}
           value={this.state.codeText}
           onChange={(e)=>this.setState({codeText: e.target.value})}
         />

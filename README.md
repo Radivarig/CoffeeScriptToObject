@@ -23,7 +23,7 @@ var CoffeeScriptToObject = require('coffeescript-to-object')
 var App = React.createClass({
   getInitialState() {
     return {
-      codeText: '@a = 5',
+      codeText: 'n = 3\n@a = n + 4',
       coffeeObject: {},
       errorMessage: '',
     }
