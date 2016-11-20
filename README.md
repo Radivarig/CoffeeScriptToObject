@@ -33,7 +33,7 @@ var App = React.createClass({
   render () {
     return (
       <div>
-        <input
+        <textarea rows={10} cols={40}
           value={this.state.codeText}
           onChange={(e)=>this.setState({codeText: e.target.value})}
         />
