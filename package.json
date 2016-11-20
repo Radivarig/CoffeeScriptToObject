@@ -5,6 +5,10 @@
   "author": "Reslav Hollos",
   "license": "MIT",
   "main": "./exports.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Radivarig/CoffeeSriptToObject.git"
+  },
   "scripts": {
     "dev": "webpack-dev-server --progress --colors",
     "build": "webpack --progress --colors"
