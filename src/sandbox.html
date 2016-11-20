@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function makeWorker(scriptString) {
+  var URL = window.URL || window.webkitURL
+  var Blob = window.Blob
+  var Worker = window.Worker
+  if (!URL || !Blob || !Worker || !scriptString) {
+      return null
+  }
+  var blob = new Blob([scriptString])
+  return new Worker(URL.createObjectURL(blob))
+}
+
+window.addEventListener('message', function(e){
+  if (e.origin !== (window.location.protocol + '//' + window.location.host))
+    return
+  var result = {}
+  if(Worker) {
+    var w = makeWorker("\
+      self.addEventListener('message', function(e) { \n\
+        var result = {} \n\
+        try { \n\
+          Function(e.data.code).call(e.data.state) \n\
+          result = e.data.state \n\
+        } catch (e) { \n\
+          result = {error: {message: e.message} } \n\
+        } \n\
+        self.postMessage(result) \n\
+      }) \n\
+    ")
+    var timeoutTerminate = function() {
+      w.terminate()
+      e.source.postMessage({error:
+        {message: 'Terminated by timeout. Check code for infinite loops.'}
+      }, e.origin)
+    }
+    var t = setTimeout(timeoutTerminate, 3000)
+    w.onmessage = function(event) {
+      e.source.postMessage(event.data, e.origin)
+      clearTimeout(t)
+      w.terminate()
+    }
+    w.postMessage(e.data)
+  }
+  else {
+    e.source.postMessage({error: {
+      message: 'Web Worker not supported. Please update your browser.'}
+    }, e.origin)
+    // try {
+    //   Function(e.data.code).call(e.data.state)
+    //   result = e.data.state
+    // } catch (e) { result = {error: e} }
+    // e.source.postMessage(result, e.origin)
+  }
+})
+</script>
+</head>
+</html>

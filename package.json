@@ -1,0 +1,27 @@
+{
+  "name": "CoffescriptToObject",
+  "version": "1.0.0",
+  "description": "coffee-script string to object",
+  "author": "Reslav Hollos",
+  "license": "MIT",
+  "main": "./exports.js",
+  "scripts": {
+    "dev": "webpack-dev-server --progress --colors",
+    "build": "webpack --progress --colors"
+  },
+  "devDependencies": {
+    "webpack": "^1.12.15",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "peerDependencies": {
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1"
+  },
+  "dependencies": {
+    "coffee-script_1-9-3": "^1.0.0",
+    "html-loader": "^0.4.3",
+    "jsx-loader": "^0.13.x",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0"
+  }
+}
