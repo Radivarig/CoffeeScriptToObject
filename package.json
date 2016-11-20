@@ -1,5 +1,5 @@
 {
-  "name": "CoffescriptToObject",
+  "name": "coffeescript-to-object",
   "version": "1.0.0",
   "description": "coffee-script string to object",
   "author": "Reslav Hollos",
@@ -7,7 +7,7 @@
   "main": "./exports.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Radivarig/CoffeeSriptToObject.git"
+    "url": "git@github.com:Radivarig/coffeescript-to-object.git"
   },
   "scripts": {
     "dev": "webpack-dev-server --progress --colors",
