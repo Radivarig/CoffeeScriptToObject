@@ -1,6 +1,6 @@
 {
   "name": "coffeescript-to-object",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "coffee-script string to object",
   "author": "Reslav Hollos",
   "license": "MIT",
