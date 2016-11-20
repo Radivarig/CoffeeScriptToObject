@@ -22,7 +22,7 @@
     "react-dom": "^15.0.1"
   },
   "dependencies": {
-    "coffee-script_1-9-3": "^1.0.0",
+    "coffee-script_compiler": "^1.11.1",
     "html-loader": "^0.4.3",
     "jsx-loader": "^0.13.x",
     "react": "^15.4.0",

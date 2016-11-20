@@ -1,6 +1,6 @@
 const React = require('react')
 
-const CoffeeScript = require('coffee-script_1-9-3')
+const CoffeeScript = require('coffee-script_compiler')
 
 const sandboxHTML = require('html!./sandbox.html')
 
